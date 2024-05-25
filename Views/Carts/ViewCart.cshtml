@@ -1,0 +1,68 @@
+﻿@model KhumaloCraft.ModelViews.CartsModelView
+
+<h1>Shopping Cart</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            appearance: none;
+            background-color: inherit;
+        }
+    </style>
+    <tbody>
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <td>
+                    @item.WorkName
+                </td>
+                <td>
+                   R @item.Price
+                </td>
+                <td>
+
+                    <form asp-controller="Carts" asp-action="RemoveFromCart" method="post">
+                        <input type="hidden" name="CartItemsID" value="@item.CartItemsID" />
+                        <button type="submit">
+                            <img src="~/images/trash.png" width="25px" height="25px" />
+                            <class ="btn btn-danger">
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                Total:
+            </td>
+            <td>
+                @Model.CartTotal.ToString("C")
+            </td>
+            <td></td>
+            <td>
+                <form asp-controller="Checkout" asp-action="ProceedToCheckout" method="post">
+                    <button type="submit" class="btn btn-success">Proceed to Checkout</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

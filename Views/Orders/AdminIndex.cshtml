@@ -1,0 +1,81 @@
+﻿@model IEnumerable<KhumaloCraft.Models.Orders>
+
+@{
+    ViewData["Title"] = "Index";
+    var _item = Model.FirstOrDefault();
+}
+
+<h1>Customer Orders</h1>
+
+<form asp-action="AdminIndex" method="get">
+    <select name="statusFilter" onchange="this.form.submit()">
+        <option value="">All</option>
+        @foreach (var status in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
+        {
+            var selected = (ViewData["CurrentFilter"]?.ToString() == status.ToString()) ? "selected" : "";
+            <option value="@status" selected>@status</option>
+
+        }
+    </select>
+</form>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td> 
+                <td>
+                    @{
+                        var excludedStatus = OrderStatus.Pending;
+                    }
+                    <form asp-action="ChangeStatus" method="post">
+                        @Html.DropDownList("OrderStatus", Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>().Select(s => new SelectListItem(s.ToString(), s.ToString())))
+                        @*Set status to selected status*@
+                        <input type="hidden" name="OrderID" value="@item.OrderID" />
+                        <input type="submit" value="Change Status" class="btn btn-primary" />
+                    </form>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.OrderID">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

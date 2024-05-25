@@ -1,0 +1,35 @@
+﻿@model IEnumerable<KhumaloCraft.Models.MyWorkModel>
+
+@{
+    ViewData["Title"] = "Products Page";
+}
+
+<h1>Proucts </h1>
+
+<div class="w-100 d-flex flex-warp">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 22rem;">
+            <img src="@item.ImagePath" class="card-img-bottom" />
+           
+            <div class="card-body">
+           
+                <h5 class="card-title">@item.ProductName</h5>
+                <p class="card-text">@item.ProductDescription</p>
+                <p>Price: R @item.Price</p>
+                @if (item.InStock)
+                {
+                    <span class="badge bg-success">Available</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Not Available</span>
+                }
+                <form asp-controller="Carts" asp-action="AddToCart" method="post"/>
+                    <input type="hidden" name="MyWorkID" value="@item.WorkID" />
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    }
+</div>
+
