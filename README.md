@@ -1,1 +1,1 @@
-For some reason I couldn't use the CMD not the Desktop application to push, so I had to do it manually. 
+Please switch to Part 2 branch for the submission. 
