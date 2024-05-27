@@ -63,7 +63,7 @@ namespace KhumaloCraft.Controllers
                 });
             }
             await _context.SaveChangesAsync();
-            return RedirectToAction("ViewCart");
+            return RedirectToAction("MyWork");
         }
 
         [HttpPost]
@@ -71,7 +71,7 @@ namespace KhumaloCraft.Controllers
         public async Task<IActionResult> RemoveFromCart(int WorkId)
         {
             var item = await _context.CartItems.Include(ci => ci.MyWork).FirstOrDefaultAsync(ci => ci.CartItemsID == WorkId);
-
+            
             if (item == null)
             {
                 return NotFound();
@@ -90,11 +90,12 @@ namespace KhumaloCraft.Controllers
                                      .Include(c => c.CartItems)
                                      .ThenInclude(ci => ci.MyWork)
                                      .FirstOrDefaultAsync(c => c.UserID == user.Id);
-
+            
             if (cart == null)
             {
                 return View(new CartsModelView());
             }
+            
 
             var model = new CartsModelView
             {

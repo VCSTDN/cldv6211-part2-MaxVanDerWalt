@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KhumaloCraft")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+686d5f9e15315ccf580a3e84500562295e0d5a6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("KhumaloCraft")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KhumaloCraft")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

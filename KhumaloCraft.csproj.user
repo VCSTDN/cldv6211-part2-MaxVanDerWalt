@@ -18,6 +18,7 @@
     <_SelectedScaffolderID>IdentityScaffolder</_SelectedScaffolderID>
     <_SelectedScaffolderCategoryPath>root/Identity</_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_LayoutPageFile />
+    <NameOfLastUsedPublishProfile>C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\POE\KhumaloCraft\Properties\PublishProfiles\KhumaloCraft20240526164122 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

@@ -570,3 +570,4 @@ C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\P
 C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\POE\KhumaloCraft\obj\Debug\net8.0\KhumaloCraft.pdb
 C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\POE\KhumaloCraft\obj\Debug\net8.0\KhumaloCraft.genruntimeconfig.cache
 C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\POE\KhumaloCraft\obj\Debug\net8.0\ref\KhumaloCraft.dll
+C:\Users\maxat\OneDrive - ADvTECH Ltd\Varsity College\2024\Semester 1\CLDV6211\POE\KhumaloCraft\obj\Debug\net8.0\KhumaloCraft.sourcelink.json
